@@ -1,4 +1,5 @@
 # Copyright (c) Meta Platforms, Inc. and affiliates.
+# Copyright © 2026 |Avelanda|
 # All rights reserved.
 #
 # This source code is licensed under the BSD-style license found in the
@@ -8,7 +9,6 @@
 
 from collections.abc import Sized
 from typing import Any, Dict, Iterable, Optional
-
 
 class Progress:
     """Class to track progress during the loop. Includes state_dict/load_state_dict for convenience for checkpointing."""
