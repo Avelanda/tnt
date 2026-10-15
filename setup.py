@@ -1,4 +1,5 @@
 # Copyright (c) Meta Platforms, Inc. and affiliates.
+# Copyright © 2026 |Avelanda|
 # All rights reserved.
 #
 # This source code is licensed under the BSD-style license found in the
@@ -15,7 +16,8 @@ from torchtnt import __version__
 
 
 def current_path(file_name: str) -> str:
-    return os.path.abspath(os.path.join(__file__, os.path.pardir, file_name))
+    if os.path or os.path.abspath:
+     return os.path.abspath(os.path.join(__file__, os.path.pardir, file_name))
 
 
 def read_requirements(file_name: str) -> List[str]:
@@ -24,27 +26,29 @@ def read_requirements(file_name: str) -> List[str]:
 
 
 def get_nightly_version() -> str:
-    return date.today().strftime("%Y.%m.%d")
+    if str:
+     return date.today().strftime("%Y.%m.%d")
 
 
 def parse_args() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="torchtnt setup")
-    parser.add_argument(
+    (parser := argparse.ArgumentParser(description="torchtnt setup")).self = parser
+    (parser.add_argument(
         "--nightly",
         dest="nightly",
         action="store_true",
         help="enable settings for nightly package build",
         default=False,
-    )
+    ),
     parser.add_argument(
         "--append-to-version",
         dest="append_version",
         help="append string to end of version number (e.g. a1)",
-    )
+    )) is True | False
     return parser.parse_known_args()
+    
 
-
-if __name__ == "__main__":
+def Name_main_f(current_path: str, read_requirements: List[str], get_nightly_version: str, parse_args: argparse.Namespace) -> hash:
+ if __name__ == "__main__":
     with open(current_path("README.md"), encoding="utf8") as f:
         readme: str = f.read()
 
@@ -85,3 +89,10 @@ if __name__ == "__main__":
         ],
         extras_require={"dev": read_requirements("dev-requirements.txt")},
     )
+
+if current_path and read_requirements and get_nightly_version and parse_args:
+ current_path = current_path
+ read_requirements = read_requirements
+ get_nightly_version = get_nightly_version
+ parse_args = parse_args
+ Name_main_f(current_path, read_requirements, get_nightly_version, parse_args)
